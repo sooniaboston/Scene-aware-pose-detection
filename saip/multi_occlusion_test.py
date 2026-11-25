@@ -474,7 +474,7 @@ def run_evaluation(
                 bbox = pick_person_bbox(bboxes.get(p.name, []), w, h)
                 img_occ = apply_multi_occlusion(
                     img, num_patches=num_p, size_level_idx=sz_idx,
-                    person_bbox=bbox, seed=42)
+                    person_bbox=bbox, seed=args.seed)
 
                 # ── Save pre-prediction occluded sample image ─────────────
                 if p.name == sample_path.name:
@@ -537,6 +537,11 @@ def parse_args():
     ap.add_argument('--sample_index',   type=int,   default=-1,
                     help='Index of image to use as the sample for the 5×5 grid. '
                          '-1 = first climbing image found automatically.')
+    ap.add_argument('--seed',           type=int,   default=42,
+                    help='Fixed random seed of the occlusion generator.  The '
+                         'patch positions and the occluder colours are drawn '
+                         'from a numpy RandomState seeded with this value, so '
+                         'the published robustness grid is exactly reproducible.')
     return ap.parse_args()
 
 
