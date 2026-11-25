@@ -1,0 +1,402 @@
+[
+  {
+    "filename": "flag1750759461_501.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.1461545678049336,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_502.jpg",
+    "gt": 0,
+    "full_pred": 1,
+    "full_score": 0.4428448763731876,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_503.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.2230487520269798,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_504.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.7602152763951388,
+    "pose_pred": 0,
+    "pose_score": 0.0
+  },
+  {
+    "filename": "flag1750759461_505.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.5717072110505045,
+    "pose_pred": 0,
+    "pose_score": 0.0
+  },
+  {
+    "filename": "flag1750759461_506.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.5594307259219858,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_507.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6454676997134458,
+    "pose_pred": 0,
+    "pose_score": 0.22999999999999998
+  },
+  {
+    "filename": "flag1750759461_508.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6149426684802932,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_509.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.8617493385999082,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_510.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.8610614506944905,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_511.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.8608406261425503,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_512.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6140280453765173,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_513.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6162694339844119,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_514.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6132847158241084,
+    "pose_pred": 0,
+    "pose_score": 0.22999999999999998
+  },
+  {
+    "filename": "flag1750759461_515.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6140248869255288,
+    "pose_pred": 0,
+    "pose_score": 0.22999999999999998
+  },
+  {
+    "filename": "flag1750759461_516.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.870228629576188,
+    "pose_pred": 0,
+    "pose_score": 0.22999999999999998
+  },
+  {
+    "filename": "flag1750759461_517.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6142322099638519,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_518.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6174587432782376,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_519.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.608026364760272,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_520.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6156295725131702,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_521.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6356709143851591,
+    "pose_pred": 0,
+    "pose_score": 0.3
+  },
+  {
+    "filename": "flag1750759461_522.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6362639029522444,
+    "pose_pred": 0,
+    "pose_score": 0.3
+  },
+  {
+    "filename": "flag1750759461_523.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6161007323802643,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_524.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.5999922126589904,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_525.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6315226891541047,
+    "pose_pred": 0,
+    "pose_score": 0.3
+  },
+  {
+    "filename": "flag1750759461_526.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6369996304539011,
+    "pose_pred": 0,
+    "pose_score": 0.3
+  },
+  {
+    "filename": "flag1750759461_527.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6485867283950252,
+    "pose_pred": 0,
+    "pose_score": 0.18
+  },
+  {
+    "filename": "flag1750759461_528.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6157622597724826,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_529.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6034718473027476,
+    "pose_pred": 0,
+    "pose_score": 0.1
+  },
+  {
+    "filename": "flag1750759461_530.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6135665841595046,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_531.jpg",
+    "gt": 1,
+    "full_pred": 0,
+    "full_score": 0.0,
+    "pose_pred": 0,
+    "pose_score": 0.0
+  },
+  {
+    "filename": "flag1750759461_532.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.07041019585821467,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_533.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.00894468721145934,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_534.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.019493683323807874,
+    "pose_pred": 0,
+    "pose_score": 0.0
+  },
+  {
+    "filename": "flag1750759461_535.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.07081804206170939,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_536.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.12199208836875038,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_537.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.07898103944141757,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_538.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.12586562665177892,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_539.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.02780653858169416,
+    "pose_pred": 0,
+    "pose_score": 0.0
+  },
+  {
+    "filename": "flag1750759461_540.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.017663446510779873,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_541.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.07188642129695746,
+    "pose_pred": 0,
+    "pose_score": 0.0
+  },
+  {
+    "filename": "flag1750759461_542.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.10323436059990049,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_543.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.01768432252202965,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_544.jpg",
+    "gt": 0,
+    "full_pred": 0,
+    "full_score": 0.2041208438097949,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_545.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6253614694426685,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_546.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.5464648697403124,
+    "pose_pred": 0,
+    "pose_score": 0.15
+  },
+  {
+    "filename": "flag1750759461_547.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.582924295865979,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_548.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.606800974644608,
+    "pose_pred": 0,
+    "pose_score": 0.22999999999999998
+  },
+  {
+    "filename": "flag1750759461_549.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6175051045063489,
+    "pose_pred": 0,
+    "pose_score": 0.08
+  },
+  {
+    "filename": "flag1750759461_550.jpg",
+    "gt": 1,
+    "full_pred": 1,
+    "full_score": 0.6165061929964105,
+    "pose_pred": 0,
+    "pose_score": 0.22999999999999998
+  }
+]

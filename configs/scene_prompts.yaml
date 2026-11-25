@@ -1,0 +1,59 @@
+# Scene-parsing prompts used by SAIP.
+#
+# The method is *goal-conditioned*: the behaviour to be recognised is
+# specified by a natural-language prompt, and retargeting to another
+# geometrically defined behaviour requires a prompt edit and a shallow refit
+# -- no architectural change.
+#
+# The three prompt groups are the semantic priors of the scene parser:
+#
+#   barrier : the CLIMBABLE obstacle (fence, railing, guardrail, picket
+#             fence).  Kept separate from `wall` so that the method can
+#             reason explicitly about "did the person cross the fence".
+#   wall    : the SOLID obstacle (brick / stone / concrete / retaining wall).
+#             Also climbable, but semantically different.
+#   ground  : the support surface.  Confidently grounded feet ATTENUATE the
+#             climbing score; clear loss of ground contact amplifies it.
+#
+# The barrier and wall masks are merged into the single `obstacle` mask; the
+# top line of that mask is estimated as the MEDIAN over the surviving columns
+# (robust to up to 50 % corrupted columns).
+
+barrier:
+  - metal fence
+  - iron railing
+  - metal guardrail
+  - picket fence
+
+wall:
+  - brick wall
+  - stone wall
+  - concrete wall
+  - retaining wall
+
+ground:
+  - floor
+  - pavement
+  - sidewalk
+  - road surface
+  - ground
+
+# Detection thresholds of the scene parser.
+detection:
+  box_threshold: 0.28
+  text_threshold: 0.22
+
+# Pose front-end.
+pose:
+  model: yolo11m-pose.pt
+  confidence: 0.1
+  # A keypoint counts as visible above this confidence (permissive, so that
+  # partially observed joints are retained).
+  keypoint_confidence: 0.2
+
+# Decision layer.
+decision:
+  # The operating threshold selected by maximising F1 on the held-out
+  # validation split of the training pool.
+  threshold: 0.22
+  heads: [rule, ml, ensemble]

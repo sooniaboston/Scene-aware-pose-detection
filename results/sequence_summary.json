@@ -1,0 +1,62 @@
+[
+  {
+    "frame": "flag1750759461_44.jpg",
+    "is_climb": false,
+    "score": 0.0067416707763736225,
+    "output": "sequence_output/NORMAL_01_flag1750759461_44.jpg"
+  },
+  {
+    "frame": "flag1750759461_46.jpg",
+    "is_climb": false,
+    "score": 0.0134249485879762,
+    "output": "sequence_output/NORMAL_02_flag1750759461_46.jpg"
+  },
+  {
+    "frame": "flag1750759461_47.jpg",
+    "is_climb": false,
+    "score": 0.12317295139451542,
+    "output": "sequence_output/NORMAL_03_flag1750759461_47.jpg"
+  },
+  {
+    "frame": "flag1750759461_50.jpg",
+    "is_climb": true,
+    "score": 0.556788461943829,
+    "output": "sequence_output/CLIMB_04_flag1750759461_50.jpg"
+  },
+  {
+    "frame": "flag1750759461_53.jpg",
+    "is_climb": true,
+    "score": 0.5903765683672222,
+    "output": "sequence_output/CLIMB_05_flag1750759461_53.jpg"
+  },
+  {
+    "frame": "flag1750759461_57.jpg",
+    "is_climb": true,
+    "score": 0.8695097817102186,
+    "output": "sequence_output/CLIMB_06_flag1750759461_57.jpg"
+  },
+  {
+    "frame": "flag1750759461_58.jpg",
+    "is_climb": true,
+    "score": 0.8227383114939295,
+    "output": "sequence_output/CLIMB_07_flag1750759461_58.jpg"
+  },
+  {
+    "frame": "flag1750759461_63.jpg",
+    "is_climb": true,
+    "score": 0.790525338053373,
+    "output": "sequence_output/CLIMB_08_flag1750759461_63.jpg"
+  },
+  {
+    "frame": "flag1750759461_68.jpg",
+    "is_climb": true,
+    "score": 0.6376227367348072,
+    "output": "sequence_output/CLIMB_09_flag1750759461_68.jpg"
+  },
+  {
+    "frame": "flag1750759461_72.jpg",
+    "is_climb": true,
+    "score": 0.6387483776582228,
+    "output": "sequence_output/CLIMB_10_flag1750759461_72.jpg"
+  }
+]

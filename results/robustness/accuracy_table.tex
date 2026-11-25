@@ -1,0 +1,27 @@
+% noise_robustness_test.py  auto-generated table
+\begin{table*}[t]
+\centering
+\caption{Image-level accuracy under progressive occlusion and motion blur on the 50-image test split.}
+\label{tab:robustness}
+\begin{tabular}{l|cccccc}
+\toprule
+\multicolumn{7}{c}{\textbf{(a) Occlusion (patch side / min(H,W))}} \\
+\midrule
+Method & 0.00 & 0.03 & 0.09 & 0.12 & 0.15 & 0.18 \\
+\midrule
+full & 0.960 & 0.940 & 0.960 & 0.940 & 0.960 & 0.900 \\
+yolo500 & 0.980 & 0.980 & 0.960 & 0.960 & 0.880 & 0.800 \\
+\bottomrule
+\end{tabular}
+\vspace{1.0em}
+\begin{tabular}{l|cccccc}
+\toprule
+\multicolumn{7}{c}{\textbf{(b) Motion blur (kernel level, size $=1+10\cdot\text{level}$)}} \\
+\midrule
+Method & 0 & 1 & 2 & 3 & 4 & 5 \\
+\midrule
+full & 0.960 & 0.940 & 0.840 & 0.780 & 0.600 & 0.320 \\
+yolo500 & 0.980 & 0.960 & 0.880 & 0.800 & 0.720 & 0.560 \\
+\bottomrule
+\end{tabular}
+\end{table*}

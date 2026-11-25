@@ -1,0 +1,17 @@
+{
+  "train1": {
+    "n": 500,
+    "climb": 371,
+    "no_climb": 129
+  },
+  "test1": {
+    "n": 50,
+    "climb": 35,
+    "no_climb": 15
+  },
+  "folders_pool": {
+    "n": 200,
+    "climb": 100,
+    "no_climb": 100
+  }
+}
