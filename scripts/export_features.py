@@ -121,6 +121,9 @@ def main() -> None:
                          "instead of taking all of them. The paper fits the "
                          "learned head on ~100 images sampled from the "
                          "training pool.")
+    ap.add_argument("--resume", action="store_true",
+                    help="Resume an interrupted run: images already present "
+                         "in the .jsonl sidecar are not recomputed.")
     args = ap.parse_args()
 
     set_seed(args.seed)
@@ -158,44 +161,85 @@ def main() -> None:
     rows: List[Dict] = []
     feature_names: List[str] = []
 
-    for i, img_path in enumerate(images):
-        print(f"[export {i+1}/{len(images)}] {img_path.name}")
-        image = cv2.imread(str(img_path))
-        if image is None:
-            print("   unreadable, skipped")
-            continue
-
-        label = -1
-        if label_dir is not None:
-            label = _read_label(label_dir / f"{img_path.stem}.txt")
-
-        try:
-            is_climb, score, detail = detector.detect_climb(image, debug=False)
-        except Exception as exc:  # keep the run alive, record the failure
-            print(f"   error: {exc}")
-            rows.append(dict(filename=img_path.name, label=label,
-                             score=0.0, prediction=0, error=str(exc)[:200]))
-            continue
-
-        feats = detail.get("all_features", {})
-        if not feature_names and feats:
-            feature_names = sorted(feats.keys())
-
-        row = dict(filename=img_path.name, label=label,
-                   score=float(score), prediction=int(bool(is_climb)))
-        for k, v in feats.items():
-            row[k] = float(v)
-        rows.append(row)
-
+    # ---- incremental, crash-safe output ---------------------------------
+    # Results are appended to a JSONL sidecar as they are produced, so a long
+    # CPU-only run can be interrupted and resumed.  The CSV is (re)written
+    # from the sidecar at the end of every run.
     out_csv = Path(args.out_csv)
     out_csv.parent.mkdir(parents=True, exist_ok=True)
+    jsonl_path = out_csv.with_suffix(".jsonl")
 
-    fields = ["filename", "label", "prediction", "score"] + feature_names
-    with open(out_csv, "w", newline="", encoding="utf-8") as fp:
-        w = csv.DictWriter(fp, fieldnames=fields, extrasaction="ignore")
-        w.writeheader()
-        for r in rows:
-            w.writerow({k: r.get(k, "") for k in fields})
+    done = {}
+    if args.resume and jsonl_path.exists():
+        with open(jsonl_path, "r", encoding="utf-8") as fp:
+            for line in fp:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rec = json.loads(line)
+                except Exception:
+                    continue
+                done[rec.get("filename")] = rec
+        print(f"[export] resuming: {len(done)} rows already in {jsonl_path.name}")
+
+    jsonl_fp = open(jsonl_path, "a", encoding="utf-8")
+
+    def _flush_csv():
+        fields = ["filename", "label", "prediction", "score"] + feature_names
+        with open(out_csv, "w", newline="", encoding="utf-8") as fp:
+            w = csv.DictWriter(fp, fieldnames=fields, extrasaction="ignore")
+            w.writeheader()
+            for r in rows:
+                w.writerow({k: r.get(k, "") for k in fields})
+
+    try:
+        for i, img_path in enumerate(images):
+            if img_path.name in done:
+                rows.append(done[img_path.name])
+                if not feature_names:
+                    feats0 = done[img_path.name]
+                    feature_names = [k for k in feats0
+                                     if k not in ("filename", "label", "prediction",
+                                                  "score", "error")]
+                continue
+
+            print(f"[export {i+1}/{len(images)}] {img_path.name}")
+            image = cv2.imread(str(img_path))
+            if image is None:
+                print("   unreadable, skipped")
+                continue
+
+            label = -1
+            if label_dir is not None:
+                label = _read_label(label_dir / f"{img_path.stem}.txt")
+
+            try:
+                is_climb, score, detail = detector.detect_climb(image, debug=False)
+            except Exception as exc:  # keep the run alive, record the failure
+                print(f"   error: {exc}")
+                row = dict(filename=img_path.name, label=label,
+                           score=0.0, prediction=0, error=str(exc)[:200])
+                rows.append(row)
+                jsonl_fp.write(json.dumps(row) + "\n")
+                jsonl_fp.flush()
+                continue
+
+            feats = detail.get("all_features", {})
+            if not feature_names and feats:
+                feature_names = sorted(feats.keys())
+
+            row = dict(filename=img_path.name, label=label,
+                       score=float(score), prediction=int(bool(is_climb)))
+            for k, v in feats.items():
+                row[k] = float(v)
+            rows.append(row)
+            jsonl_fp.write(json.dumps(row) + "\n")
+            jsonl_fp.flush()
+    finally:
+        jsonl_fp.close()
+
+    _flush_csv()
 
     # Companion metadata
     meta = dict(

@@ -862,6 +862,19 @@ class GroundingSAMClimbDetectorV2:
             print(f"  [warn] transformers patch skipped: {e}")
 
     # ---- GDINO + SAM segmentation (identical API to v1) ---------------------
+    def _set_sam_image(self, img_rgb: np.ndarray) -> None:
+        """Encode the image with SAM, once per image.
+
+        The three scene prompts are segmented against the SAME image, so the
+        SAM image encoder is run once and the result is reused.  This is a
+        pure speed optimisation; the produced masks are identical.
+        """
+        key = id(img_rgb)
+        if getattr(self, "_sam_img_key", None) == key:
+            return
+        self.sam_predictor.set_image(img_rgb)
+        self._sam_img_key = key
+
     def _segment_prompt(self, image: np.ndarray, text_prompt: str) -> np.ndarray:
         h, w = image.shape[:2]
         try:
@@ -884,7 +897,7 @@ class GroundingSAMClimbDetectorV2:
                 except Exception: pass
             if boxes is None or len(boxes) == 0:
                 return np.zeros((h, w), dtype=np.uint8)
-            self.sam_predictor.set_image(img_rgb)
+            self._set_sam_image(img_rgb)
             mask = np.zeros((h, w), dtype=np.uint8)
             for box in boxes:
                 bn = box.cpu().numpy() if torch.is_tensor(box) else box
