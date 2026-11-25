@@ -18,6 +18,12 @@ The method reaches **F1 = 0.971** (precision = recall = 0.971, accuracy =
 images**, matching a YOLO11m detector trained on 500 images, and degrades
 more gracefully under multi-patch occlusion.
 
+**Source code:** <https://github.com/sooniaboston/Scene-aware-pose-detection>
+
+```bash
+git clone https://github.com/sooniaboston/Scene-aware-pose-detection.git
+```
+
 ---
 
 ## 1. Method in one page
