@@ -197,6 +197,24 @@ The script is deterministic and writes the feature names and the run
 configuration next to the CSV.  A fixed seed (42) is set for every RNG that is
 touched.
 
+The released feature tables are:
+
+| file | rows | contents |
+|---|---|---|
+| `results/features/train1.csv` | 500 | the interaction features of the training split (371 climb / 129 no-climb) |
+| `results/features/test1.csv`  | 50  | the interaction features of the test split (35 climb / 15 no-climb) |
+
+Both carry the same 57 columns, the four metadata columns `filename`,
+`label`, `prediction` and `score`, and a companion `*.meta.json` that lists
+the feature names and the run configuration.  The label and the prediction
+are the ground truth and the output of the shipped classifier, so the tables
+can be used directly to refit or re-evaluate a decision layer without
+rerunning any perception model.
+
+A row whose 57 feature columns are empty is an image in which neither a
+person nor a scene could be perceived; such rows are genuine failures of the
+perception stage rather than missing data.
+
 ### 4.3 Evaluation on the test split (Task 2)
 
 ```bash

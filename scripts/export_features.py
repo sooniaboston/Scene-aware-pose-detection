@@ -241,16 +241,19 @@ def main() -> None:
 
     _flush_csv()
 
-    # Companion metadata
+    # Companion metadata.  Only the *basenames* of the local paths are kept:
+    # the released metadata must not carry the absolute layout of the
+    # machine on which the export happened to run.
     meta = dict(
         n_images=len(rows),
         n_features=len(feature_names),
         feature_names=feature_names,
-        pose_model=args.pose_model,
+        pose_model=Path(args.pose_model).name,
         classifier=args.classifier,
-        classifier_model_path=args.model_path,
+        classifier_model_path=(Path(args.model_path).name
+                               if args.model_path else None),
         seed=args.seed,
-        image_dir=str(image_dir),
+        image_dir=image_dir.name,
     )
     with open(out_csv.with_suffix(".meta.json"), "w", encoding="utf-8") as fp:
         json.dump(meta, fp, indent=2)

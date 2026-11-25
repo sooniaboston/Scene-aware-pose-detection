@@ -60,9 +60,9 @@
     "scene_vertical_position",
     "scene_wall_top_y"
   ],
-  "pose_model": "C:\\Users\\sofia\\Documents\\Code\\pose_ori\\pose\\yolo11m-pose.pt",
+  "pose_model": "yolo11m-pose.pt",
   "classifier": "ensemble",
-  "classifier_model_path": "C:\\Users\\sofia\\Documents\\Code\\pose_ori\\pose\\climb_classifier_v2.pkl",
+  "classifier_model_path": "climb_classifier_v2.pkl",
   "seed": 42,
-  "image_dir": "C:\\Users\\sofia\\Documents\\Code\\pose_ori\\pose\\test1\\image"
+  "image_dir": "image"
 }
